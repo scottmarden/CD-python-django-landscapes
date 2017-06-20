@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Landscape</title>
+	</head>
+	<body>
+		{% load staticfiles %}
+		<h1>Your Random Image of the day:</h1>
+		<h4>{{ num }}</h4>
+		<h4>{{ landscape }}</h4>
+		{% with 'landscape_app/images/'|add:landscape|add:'.jpg' as image_static %}
+		<img src="{% static image_static %}" alt={{ alt_tag }}>
+		{% endwith %}
+	</body>
+</html>
